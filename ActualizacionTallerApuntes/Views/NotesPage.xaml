@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ActualizacionTallerApuntes.Views.NotesPage"
+             xmlns:local="clr-namespace:ActualizacionTallerApuntes.Views"
+             xmlns:vm="clr-namespace:ActualizacionTallerApuntes.ViewModels"
+             Title="Notas">
+    
+    <ContentPage.BindingContext>
+        <vm:NotesViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout Padding="10">
+        <Editor Placeholder="Escribe una nota..." Text="{Binding SelectedNote.Text}" />
+        <Button Text="Guardar" Command="{Binding SaveCommand}" />
+        <Button Text="Eliminar" Command="{Binding DeleteCommand}" />
+
+        <CollectionView ItemsSource="{Binding Notes}" SelectionMode="Single"
+                        SelectedItem="{Binding SelectedNote}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Padding="5">
+                        <Label Text="{Binding Date}" FontAttributes="Bold" />
+                        <Label Text="{Binding Text}" LineBreakMode="WordWrap" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+    
+</ContentPage>

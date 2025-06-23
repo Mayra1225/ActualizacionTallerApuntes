@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using ActualizacionTallerApuntes.ViewModels;
+using Microsoft.Extensions.Logging;
 
 namespace ActualizacionTallerApuntes
 {
@@ -7,6 +8,9 @@ namespace ActualizacionTallerApuntes
         public static MauiApp CreateMauiApp()
         {
             var builder = MauiApp.CreateBuilder();
+
+            builder.Services.AddSingleton<NotesViewModel>();
+
             builder
                 .UseMauiApp<App>()
                 .ConfigureFonts(fonts =>
@@ -16,7 +20,7 @@ namespace ActualizacionTallerApuntes
                 });
 
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();
