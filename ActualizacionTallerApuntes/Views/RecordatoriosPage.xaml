@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ActualizacionTallerApuntes.Views.RecordatoriosPage"
+             xmlns:vm="clr-namespace:ActualizacionTallerApuntes.ViewModels"
+             Title="RecordatoriosPage">
+    <ContentPage.BindingContext>
+        <vm:RecordatorioViewModel />
+    </ContentPage.BindingContext>
+
+    <VerticalStackLayout Padding="10">
+        <Entry Placeholder="Nombre del recordatorio"
+           Text="{Binding NuevoTexto}" />
+        <TimePicker Time="{Binding NuevaHora}" />
+        <Button Text="Agregar Recordatorio" Command="{Binding AddCommand}" />
+
+        <CollectionView ItemsSource="{Binding Recordatorios}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Margin="5" BorderColor="LightGray">
+                        <VerticalStackLayout>
+                            <Label Text="{Binding Texto}" FontSize="18" />
+                            <Label Text="{Binding FechaHora}" FontSize="14" />
+                            <Button Text="Eliminar" 
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type vm:RecordatorioViewModel}}, Path=DeleteCommand}"
+                                CommandParameter="{Binding .}" />
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>
