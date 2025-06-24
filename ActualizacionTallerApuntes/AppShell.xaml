@@ -8,10 +8,10 @@
     Title="ActualizacionTallerApuntes">
 
     <TabBar>
-        <ShellContent Title="Notas" ContentTemplate="{DataTemplate local:NotesPage}" />
-        <ShellContent Title="Recordatorios" ContentTemplate="{DataTemplate local:RecordatoriosPage}" />
-        <ShellContent Title="Clima" ContentTemplate="{DataTemplate local:ClimaPage}" />
-        <ShellContent Title="About" ContentTemplate="{DataTemplate local:AboutPage}" />
+        <ShellContent Title="Notas" ContentTemplate="{DataTemplate local:NotesPage}" Route="NotesPage"/>
+        <ShellContent Title="Recordatorios" ContentTemplate="{DataTemplate local:RecordatoriosPage}" Route="RecordatoriosPage"/>
+        <ShellContent Title="Clima" ContentTemplate="{DataTemplate local:ClimaPage}" Route="ClimaPage"/>
+        <ShellContent Title="About" ContentTemplate="{DataTemplate local:AboutPage}" Route="AboutPage"/>
     </TabBar>
 
 </Shell>

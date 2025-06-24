@@ -4,16 +4,19 @@
              x:Class="ActualizacionTallerApuntes.Views.NotesPage"
              xmlns:local="clr-namespace:ActualizacionTallerApuntes.Views"
              xmlns:vm="clr-namespace:ActualizacionTallerApuntes.ViewModels"
-             Title="Notas">
+             Title="Notas"
+             BackgroundColor="{StaticResource NotesBackgroundColor}"
+             Shell.BackgroundColor="{StaticResource NotesPrimaryColor}"
+             Shell.TitleColor="Black">
     
     <ContentPage.BindingContext>
         <vm:NotesViewModel />
     </ContentPage.BindingContext>
 
     <StackLayout Padding="10">
-        <Editor Placeholder="Escribe una nota..." Text="{Binding SelectedNote.Text}" />
-        <Button Text="Guardar" Command="{Binding SaveCommand}" />
-        <Button Text="Eliminar" Command="{Binding DeleteCommand}" />
+        <Editor Placeholder="Escribe una nota..." Text="{Binding SelectedNote.Text}" TextColor="Black"/>
+        <Button Text="Guardar" Command="{Binding SaveCommand}" BackgroundColor="{StaticResource NotesPrimaryColor}" TextColor="Black" Margin="0,0,0,10"/>
+        <Button Text="Eliminar" Command="{Binding DeleteCommand}" BackgroundColor="{StaticResource NotesPrimaryColor}" TextColor="Black"/>
 
         <CollectionView ItemsSource="{Binding Notes}" SelectionMode="Single"
                         SelectedItem="{Binding SelectedNote}">

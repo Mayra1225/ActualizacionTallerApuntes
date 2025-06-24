@@ -4,7 +4,11 @@
              x:Class="ActualizacionTallerApuntes.Views.AboutPage"
              xmlns:vm="clr-namespace:ActualizacionTallerApuntes.ViewModels"
              xmlns:views="clr-namespace:ActualizacionTallerApuntes.Views"
-             Title="About">
+             Title="About"
+             BackgroundColor="{StaticResource AboutBackgroundColor}"
+             Shell.BackgroundColor="{StaticResource AboutPrimaryColor}"
+             Shell.TitleColor="Black">
+    
     <ContentPage.BindingContext>
         <vm:AboutViewModel />
     </ContentPage.BindingContext>
@@ -14,7 +18,7 @@
             <CollectionView ItemsSource="{Binding Integrantes}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Frame BorderColor="Gray" CornerRadius="20" Padding="15" Margin="10" BackgroundColor="#FAFAFA">
+                        <Frame BorderColor="{StaticResource AboutTextColor}" CornerRadius="20" Padding="15" Margin="10" BackgroundColor="{StaticResource AboutPrimaryColor}">
                             <StackLayout>
                                 <Image Source="{Binding Foto}" HeightRequest="120" Aspect="AspectFill" />
                                 <Label Text="{Binding Nombre}" FontAttributes="Bold" FontSize="20" />

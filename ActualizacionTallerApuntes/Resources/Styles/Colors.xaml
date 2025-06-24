@@ -4,6 +4,26 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
+
+    <!-- Colores para Notes -->
+    <Color x:Key="NotesPrimaryColor">#B3E5FC</Color>
+    <Color x:Key="NotesBackgroundColor">#E1F5FE</Color>
+
+    <!-- Colores para Recordatorios -->
+    <Color x:Key="RecordatoriosPrimaryColor">#FFCCBC</Color>
+    <Color x:Key="RecordatoriosBackgroundColor">#FBE9E7</Color>
+    <Color x:Key="RecordatoriosAccentColor">#FF8A65</Color>
+
+    <!-- Colores para Clima -->
+    <Color x:Key="ClimaPrimaryColor">#C8E6C9</Color>
+    <Color x:Key="ClimaBackgroundColor">#E8F5E9</Color>
+    <Color x:Key="ClimaTextColor">#388E3C</Color>
+
+    <!-- Colores para About -->
+    <Color x:Key="AboutPrimaryColor">#D1C4E9</Color>
+    <Color x:Key="AboutBackgroundColor">#F3E5F5</Color>
+    <Color x:Key="AboutTextColor">#6A1B9A</Color>
+
     <!-- Note: For Android please see also Platforms\Android\Resources\values\colors.xml -->
 
     <Color x:Key="Primary">#512BD4</Color>

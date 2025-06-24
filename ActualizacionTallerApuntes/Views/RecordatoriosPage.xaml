@@ -3,7 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ActualizacionTallerApuntes.Views.RecordatoriosPage"
              xmlns:vm="clr-namespace:ActualizacionTallerApuntes.ViewModels"
-             Title="Recordatorios">
+             Title="Recordatorios"
+             BackgroundColor="{StaticResource RecordatoriosBackgroundColor}"
+             Shell.BackgroundColor="{StaticResource RecordatoriosPrimaryColor}"
+             Shell.TitleColor="Black">
+    
     <ContentPage.BindingContext>
         <vm:RecordatorioViewModel />
     </ContentPage.BindingContext>
@@ -12,18 +16,20 @@
         <Entry Placeholder="Nombre del recordatorio"
            Text="{Binding NuevoTexto}" />
         <TimePicker Time="{Binding NuevaHora}" />
-        <Button Text="Agregar Recordatorio" Command="{Binding AddCommand}" />
+        <Button Text="Agregar Recordatorio" Command="{Binding AddCommand}" BackgroundColor="{StaticResource RecordatoriosPrimaryColor}" TextColor="Black"/>
 
         <CollectionView ItemsSource="{Binding Recordatorios}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Frame Margin="5" BorderColor="LightGray">
+                    <Frame Margin="5" BorderColor="LightGray" BackgroundColor="{StaticResource RecordatoriosPrimaryColor}">
                         <VerticalStackLayout>
                             <Label Text="{Binding Texto}" FontSize="18" />
                             <Label Text="{Binding FechaHora}" FontSize="14" />
                             <Button Text="Eliminar" 
                                 Command="{Binding Source={RelativeSource AncestorType={x:Type vm:RecordatorioViewModel}}, Path=DeleteCommand}"
-                                CommandParameter="{Binding .}" />
+                                CommandParameter="{Binding .}" 
+                                BackgroundColor="{StaticResource RecordatoriosAccentColor}"
+                                TextColor="Black"/>
                         </VerticalStackLayout>
                     </Frame>
                 </DataTemplate>

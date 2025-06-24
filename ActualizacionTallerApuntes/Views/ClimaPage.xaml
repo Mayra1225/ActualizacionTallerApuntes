@@ -3,14 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ActualizacionTallerApuntes.Views.ClimaPage"
              xmlns:vm="clr-namespace:ActualizacionTallerApuntes.ViewModels"
-             Title="Clima">
+             Title="Clima"
+             BackgroundColor="{StaticResource ClimaBackgroundColor}"
+             Shell.BackgroundColor="{StaticResource ClimaPrimaryColor}"
+             Shell.TitleColor="Black">
     <ContentPage.BindingContext>
         <vm:ClimaViewModel />
     </ContentPage.BindingContext>
 
     <StackLayout Padding="20" Spacing="10">
-        <Button Text="Obtener clima actual" Command="{Binding ObtenerCommand}" />
-        <Frame BorderColor="SkyBlue" BackgroundColor="#E0F7FA" Padding="15" CornerRadius="12">
+        <Button Text="Obtener clima actual" Command="{Binding ObtenerCommand}" BackgroundColor="{StaticResource ClimaPrimaryColor}" TextColor="Black"/>
+        <Frame BorderColor="{StaticResource ClimaTextColor}" BackgroundColor="{StaticResource ClimaPrimaryColor}" Padding="15" CornerRadius="12">
             <StackLayout>
                 <Label Text="Hora:" FontAttributes="Bold" />
                 <Label Text="{Binding Info.Hora}" />
