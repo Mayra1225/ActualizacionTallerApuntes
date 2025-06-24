@@ -1,4 +1,5 @@
-﻿using ActualizacionTallerApuntes.ViewModels;
+﻿using ActualizacionTallerApuntes.Services;
+using ActualizacionTallerApuntes.ViewModels;
 using Microsoft.Extensions.Logging;
 
 namespace ActualizacionTallerApuntes
@@ -18,6 +19,15 @@ namespace ActualizacionTallerApuntes
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
+
+            builder.Services.AddSingleton<NotesViewModel>();
+            builder.Services.AddSingleton<RecordatorioViewModel>();
+            builder.Services.AddSingleton<ClimaViewModel>();
+            builder.Services.AddSingleton<AboutViewModel>();
+
+            builder.Services.AddSingleton<NoteService>();
+            builder.Services.AddSingleton<RecordatorioService>();
+            builder.Services.AddSingleton<ClimaService>();
 
 #if DEBUG
             builder.Logging.AddDebug();

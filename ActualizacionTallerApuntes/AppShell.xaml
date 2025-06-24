@@ -11,7 +11,7 @@
         <ShellContent Title="Notas" ContentTemplate="{DataTemplate local:NotesPage}" />
         <ShellContent Title="Recordatorios" ContentTemplate="{DataTemplate local:RecordatoriosPage}" />
         <ShellContent Title="Clima" ContentTemplate="{DataTemplate local:ClimaPage}" />
-        <!--<ShellContent Title="Acerca de" ContentTemplate="{DataTemplate local:AboutPage}" />-->
+        <ShellContent Title="About" ContentTemplate="{DataTemplate local:AboutPage}" />
     </TabBar>
 
 </Shell>

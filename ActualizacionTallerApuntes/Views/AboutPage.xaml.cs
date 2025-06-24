@@ -1,8 +1,8 @@
 namespace ActualizacionTallerApuntes.Views;
 
-public partial class MiembroView : ContentPage
+public partial class AboutPage : ContentPage
 {
-	public MiembroView()
+	public AboutPage()
 	{
 		InitializeComponent();
 	}
