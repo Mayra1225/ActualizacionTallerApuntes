@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ActualizacionTallerApuntes.Views.ClimaPage"
+             xmlns:vm="clr-namespace:ActualizacionTallerApuntes.ViewModels"
+             Title="Clima">
+    <ContentPage.BindingContext>
+        <vm:ClimaViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout Padding="20" Spacing="10">
+        <Button Text="Obtener clima actual" Command="{Binding ObtenerCommand}" />
+        <Frame BorderColor="SkyBlue" BackgroundColor="#E0F7FA" Padding="15" CornerRadius="12">
+            <StackLayout>
+                <Label Text="Hora:" FontAttributes="Bold" />
+                <Label Text="{Binding Info.Hora}" />
+
+                <Label Text="Temperatura (°C):" FontAttributes="Bold" />
+                <Label Text="{Binding Info.Temperatura}" />
+
+                <Label Text="Humedad (%):" FontAttributes="Bold" />
+                <Label Text="{Binding Info.Humedad}" />
+
+                <Label Text="Lluvia (mm):" FontAttributes="Bold" />
+                <Label Text="{Binding Info.Lluvia}" />
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</ContentPage>
